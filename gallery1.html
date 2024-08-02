@@ -3,140 +3,108 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+			rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet" />
 		<title>Va's Gallery!</title>
+		<link rel="stylesheet" href="style/style.css" />
+		<style>
+			/* Custom styles for modal */
+			.modal {
+				display: none;
+				position: fixed;
+				z-index: 50;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: rgba(0, 0, 0, 0.8);
+			}
+			.modal-content {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				max-width: 90%;
+				max-height: 90%;
+			}
+		</style>
 	</head>
-	<body>
-		<header>
-			<h1>Mamal's Gallery</h1>
-			<p>
+	<body class="font-poppins bg-slate-100">
+		<header class="flex flex-col mx-auto mt-24 mb-48">
+			<h1 class="font-semibold text-6xl text-center mb-12">Mamal's Gallery</h1>
+			<p class="text-2xl text-center order-2 mx-32">
 				Karena kamu sedang ulang tahun, maka harus ada foto kamunya dong. Ini
-				kupilihin yang favorit ku sih, walau aku suka semua fotomu.
+				kupilihin yang favorit ku sih, walau aku suka semua fotomu. Jangan
+				komplen ini jelek ini cakep karena semuanya cakep oke jangan melawan. 
 			</p>
 		</header>
-		<main id="gallery-malva" class="container mx-auto grid grid-cols-2 gap-4">
-			<div class="p-2 bg-white rounded shadow">
+		<main id="gallery-malva" class="container mx-auto grid grid-cols-3 gap-2">
+			<div
+				class="w-full h-60 rounded-lg overflow-hidden shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg">
 				<img
-					src="style/assets/img/Foto Malva/Foto1malva.jpg"
-					alt="foto 1 kamu"
-					class="w-full h-auto object-cover rounded" />
+					src="./style/assets/img/Foto Malva/Foto1malva.jpg"
+					alt="Foto Malva 1"
+					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+					onclick="openModal(this.src)" />
 			</div>
-			<div class="p-2 bg-white rounded shadow">
+			<div
+				class="w-full h-60 rounded-lg overflow-hidden shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg">
 				<img
-					src="style/assets/img/Foto Malva/Foto2malva.jpg"
-					alt="foto 2 kamu"
-					class="w-full h-auto object-cover rounded" />
+					src="./style/assets/img/Foto Malva/Foto2malva.jpg"
+					alt="Foto Malva 2"
+					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+					onclick="openModal(this.src)" />
 			</div>
-			<div class="p-2 bg-white rounded shadow">
+			<div
+				class="w-full h-60 rounded-lg overflow-hidden shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg">
 				<img
-					src="style/assets/img/Foto Malva/Foto3malva.jpg"
-					alt="foto 3 kamu"
-					class="w-full h-auto object-cover rounded" />
+					src="./style/assets/img/Foto Malva/Foto3malva.jpg"
+					alt="Foto Malva 3"
+					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+					onclick="openModal(this.src)" />
 			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto4malva.jpg"
-					alt="foto 4 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto5malva.jpg"
-					alt="foto 5 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto6malva.jpg"
-					alt="foto 6 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto7malva.jpg"
-					alt="foto 7 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto8malva.jpg"
-					alt="foto 8 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto9malva.jpg"
-					alt="foto 9 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto10malva.jpg"
-					alt="foto 10 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto11malva.jpg"
-					alt="foto 11 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto12malva.jpg"
-					alt="foto 12 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto13malva.jpg"
-					alt="foto 13 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto14malva.jpg"
-					alt="foto 14 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto15malva.jpg"
-					alt="foto 15 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto16malva.jpg"
-					alt="foto 16 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto17malva.jpg"
-					alt="foto 17 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto18malva.jpg"
-					alt="foto 18 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto19malva.jpg"
-					alt="foto 19 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
-			<div class="p-2 bg-white rounded shadow">
-				<img
-					src="style/assets/img/Foto Malva/Foto20malva.jpg"
-					alt="foto 20 kamu"
-					class="w-full h-auto object-cover rounded" />
-			</div>
+			<div class="mb-60"></div>
 		</main>
+
+		<!-- Modal -->
+		<div id="myModal" class="modal">
+			<span
+				onclick="closeModal()"
+				class="absolute top-4 right-8 text-white text-4xl cursor-pointer"
+				>&times;</span
+			>
+			<img class="modal-content" id="img01" />
+		</div>
+
 		<footer>
 			<!-- Nanti di sini dikasih "Terimakasih mamal uda liat ampe abis,/n cantik cantik kan foto kamu :]" -->
 		</footer>
+
+		<script>
+			// Get the modal
+			var modal = document.getElementById("myModal");
+
+			// Get the image and insert it inside the modal - use its "alt" text as a caption
+			var modalImg = document.getElementById("img01");
+
+			function openModal(src) {
+				modal.style.display = "block";
+				modalImg.src = src;
+			}
+
+			// Close the modal
+			function closeModal() {
+				modal.style.display = "none";
+			}
+		</script>
 	</body>
 </html>
