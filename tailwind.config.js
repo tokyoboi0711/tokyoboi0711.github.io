@@ -3,11 +3,10 @@ module.exports = {
 	content: ["./index.html", "./gallery1.html"],
 	theme: {
 		fontFamily: {
-			'lora': ['Lora'],
-			'poppins' : ['Poppins']
+			lora: ["Lora"],
+			poppins: ["Poppins"],
 		},
-		extend: {
-		},
+		extend: {},
 	},
 	plugins: [],
 };
