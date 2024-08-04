@@ -1,299 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
-			rel="stylesheet" />
-		<title>Va's Gallery!</title>
-		<link rel="stylesheet" href="style/style.css" />
-		<style>
-			/* Custom styles for modal */
-			.modal {
-				display: none;
-				position: fixed;
-				z-index: 1;
-				padding-top: 100px;
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				overflow: auto;
-				background-color: rgb(0, 0, 0);
-				background-color: rgba(0, 0, 0, 0.9);
-			}
-			.modal-content {
-				margin: auto;
-				display: block;
-				width: 80%;
-				max-width: 700px;
-			}
-			.modal-content,
-			.caption {
-				-webkit-animation-name: zoom;
-				-webkit-animation-duration: 0.6s;
-				animation-name: zoom;
-				animation-duration: 0.6s;
-			}
-			@-webkit-keyframes zoom {
-				from {
-					-webkit-transform: scale(0);
-				}
-				to {
-					-webkit-transform: scale(1);
-				}
-			}
-			@keyframes zoom {
-				from {
-					transform: scale(0);
-				}
-				to {
-					transform: scale(1);
-				}
-			}
-			.close {
-				position: absolute;
-				top: 15px;
-				right: 35px;
-				color: #f1f1f1;
-				font-size: 40px;
-				font-weight: bold;
-				transition: 0.3s;
-			}
-			.close:hover,
-			.close:focus {
-				color: #bbb;
-				text-decoration: none;
-				cursor: pointer;
-			}
-			.modal-caption {
-				margin: auto;
-				display: block;
-				width: 80%;
-				max-width: 700px;
-				text-align: center;
-				color: #ccc;
-				padding: 10px 0;
-				height: 150px;
-			}
-		</style>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Our Gallery!</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <style>
+      /* Custom styles for modal */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+      .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+      }
+      .modal-content,
+      .caption {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+      }
+      @-webkit-keyframes zoom {
+        from {
+          -webkit-transform: scale(0);
+        }
+        to {
+          -webkit-transform: scale(1);
+        }
+      }
+      @keyframes zoom {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .modal-caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+      }
+    </style>
+  </head>
 
-	<body class="font-poppins bg-gradient-to-tr from-pink-500 to-purple-400">
-		<header class="flex flex-col mx-auto mb-32 mt-24">
-			<h1
-				class="font-semibold text-6xl sm:text-5xl lg:text-6xl text-center mb-12 mx-auto bg-gradient-to-tr from-yellow-500 to-green-300 bg-clip-text text-transparent">
-				Mamal's Gallery
-			</h1>
-			<p
-				class="text-lg lg:text-xl text-center order-2 mx-4 sm:mx-16 lg:mx-44 text-orange-950">
-				Ini adalah kumpulan foto-foto momen kita bersama hihi, mungkin bisa buat
-				kamu nostalgia ke depannya wkwkwk. Aku tau sih, yang ulang tahun kan
-				kamu, kenapa aku malah bikin foto kita ya? tapi gapapa deh ak kan juga
-				mau ikutan. Anyways, enjoy!
-			</p>
-		</header>
-		<main
-			id="gallery-malva"
-			class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-10 px-4 sm:px-8 lg:px-24 py-8 sm:py-16 lg:py-32 rounded-3xl bg-gradient-to-tr from-[#8f8989] to-[#c2bab6] shadow-2xl">
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto1kita.jpg"
-					alt="Foto Bareng 1"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto2kita.jpg"
-					alt="Foto Bareng 2"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto3kita.jpg"
-					alt="Foto Bareng 3"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto4kita.jpg"
-					alt="Foto Bareng 4"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto5kita.jpg"
-					alt="Foto Bareng 5"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto6kita.jpg"
-					alt="Foto Bareng 6"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto7kita.jpg"
-					alt="Foto Bareng 7"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto8kita.jpg"
-					alt="Foto Bareng 8"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto9kita.jpg"
-					alt="Foto Bareng 9"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto10kita.jpg"
-					alt="Foto Bareng 10"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto11kita.jpg"
-					alt="Foto Bareng 11"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto12kita.jpg"
-					alt="Foto Bareng 12"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto13kita.jpg"
-					alt="Foto Bareng 13"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto14kita.jpg"
-					alt="Foto Bareng 14"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto15kita.jpg"
-					alt="Foto Bareng 15"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto16kita.jpg"
-					alt="Foto Bareng 16"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto17kita.jpg"
-					alt="Foto Bareng 17"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto18kita.jpg"
-					alt="Foto Bareng 18"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto19kita.jpg"
-					alt="Foto Bareng 19"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto20kita.jpg"
-					alt="Foto Bareng 20"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-			<div
-				class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800">
-				<img
-					src="./style/assets/img/Foto Bareng/Foto21kita.jpg"
-					alt="Foto Bareng 21"
-					class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
-					onclick="openModal(this.src)" />
-			</div>
-		</main>
-		<footer
-			class="bg-gradient-to-tr from-yellow-500 to-green-300 h-16 flex items-center justify-center mt-8 sm:mt-12 lg:mt-16">
-			<p class="text-[#F5EDED]">Made with ❤️ by Ami</p>
-		</footer>
+  <body class="font-poppins">
+    <header class="flex flex-col mx-auto mb-32 mt-24">
+      <h1
+        class="font-semibold text-6xl sm:text-5xl lg:text-6xl text-center mb-12 mx-auto bg-gradient-to-tr from-yellow-500 to-green-300 bg-clip-text text-transparent"
+      >
+        Our Gallery
+      </h1>
+      <p
+        class="text-lg lg:text-xl text-center order-2 mx-4 sm:mx-16 lg:mx-44 text-orange-950"
+      >
+        Ini adalah kumpulan foto-foto momen kita bersama hihi, mungkin bisa buat
+        kamu nostalgia ke depannya wkwkwk. Aku tau kok tidak ada yang wah sejauh
+        ini, aku masih belajar juga hehe, tapi semoga kamu bisa enjoy ya. Aku
+        tau sih, yang ulang tahun kan kamu, kenapa aku malah bikin foto kita ya?
+        tapi gapapa deh ak kan juga mau ikutan. Anyways, enjoy!
+      </p>
+    </header>
+    <main
+      id="gallery-malva"
+      class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-10 px-4 sm:px-8 lg:px-24 py-8 sm:py-16 lg:py-32 rounded-3xl bg-gradient-to-tr from-[#8f8989] to-[#c2bab6] shadow-2xl"
+    >
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto1kita.jpg"
+          alt="Foto Bareng 1"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto2kita.jpg"
+          alt="Foto Bareng 2"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto3kita.jpg"
+          alt="Foto Bareng 3"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto4kita.jpg"
+          alt="Foto Bareng 4"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto5kita.jpg"
+          alt="Foto Bareng 5"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto6kita.jpg"
+          alt="Foto Bareng 6"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto7kita.jpg"
+          alt="Foto Bareng 7"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto8kita.jpg"
+          alt="Foto Bareng 8"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto9kita.jpg"
+          alt="Foto Bareng 9"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto10kita.jpg"
+          alt="Foto Bareng 10"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto11kita.jpg"
+          alt="Foto Bareng 11"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto12kita.jpg"
+          alt="Foto Bareng 12"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto13kita.jpg"
+          alt="Foto Bareng 13"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto14kita.jpg"
+          alt="Foto Bareng 14"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto15kita.jpg"
+          alt="Foto Bareng 15"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto16kita.jpg"
+          alt="Foto Bareng 16"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto17kita.jpg"
+          alt="Foto Bareng 17"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto18kita.jpg"
+          alt="Foto Bareng 18"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto19kita.jpg"
+          alt="Foto Bareng 19"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto20kita.jpg"
+          alt="Foto Bareng 20"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+      <div
+        class="w-full h-60 sm:h-80 lg:h-60 rounded-lg overflow-hidden border-slate-900 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-slate-800"
+      >
+        <img
+          src="./style/assets/img/Foto Bareng/Foto21kita.jpg"
+          alt="Foto Bareng 21"
+          class="w-full h-full object-cover filter blur-sm transition duration-500 ease-in-out hover:blur-0 hover:scale-110 cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+      </div>
+    </main>
+    <footer
+      class="bg-gradient-to-tr from-yellow-500 to-green-300 h-16 flex items-center justify-center mt-8 sm:mt-12 lg:mt-16"
+    >
+      <p class="text-[#F5EDED]">Made with ❤️ by Ami</p>
+    </footer>
 
-		<!-- Modal -->
-		<div id="myModal" class="modal">
-			<span class="close" onclick="closeModal()">&times;</span>
-			<img class="modal-content" id="modalImage" />
-			<div id="caption" class="modal-caption"></div>
-		</div>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage" />
+      <div id="caption" class="modal-caption"></div>
+    </div>
 
-		<script>
-			function openModal(src) {
-				document.getElementById("myModal").style.display = "block";
-				document.getElementById("modalImage").src = src;
-				document.getElementById("caption").innerHTML = src
-					.split("/")
-					.pop()
-					.split(".")
-					.shift();
-			}
+    <script>
+      function openModal(src) {
+        document.getElementById("myModal").style.display = "block";
+        document.getElementById("modalImage").src = src;
+        document.getElementById("caption").innerHTML = src
+          .split("/")
+          .pop()
+          .split(".")
+          .shift();
+      }
 
-			function closeModal() {
-				document.getElementById("myModal").style.display = "none";
-			}
-		</script>
-	</body>
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+    </script>
+  </body>
 </html>
