@@ -13,13 +13,12 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 	<body class="bg-gradient-to-tr from-blue-800 to-emerald-700 font-poppins">
-		<main>
-			<header id="hero-container" class="mb-32 flex mx-64 gap-24">
-				<h1
-					class="text-8xl text-center font-weight-extrabold mt-32 mb-28 bg-gradient-to-tr bg-clip-text text-transparent from-blue-400 to-green-500">
+		<main class="px-4 sm:px-8  lg:px-64">
+			<header id="hero-container" class="mb-16 md:flex-col sm:mb-24 lg:mb-32 flex flex-col lg:flex-row gap-6 lg:gap-24">
+				<h1 class="text-4xl sm:text-5xl lg:text-8xl text-center font-extrabold mt-16 lg:mt-32 mb-16 lg:mb-28 bg-gradient-to-tr bg-clip-text text-transparent from-blue-400 to-green-500">
 					Happy Birthday, Malvaquina Aisha!
 				</h1>
-				<p class="text-[1.5rem] text-justify my-32 text-emerald-200">
+				<p class="text-base sm:text-lg lg:text-[1.5rem] text-justify my-8 lg:my-32 text-emerald-200 order-2">
 					Hai sayang! selamat ulang tahun ya. Maaf kado ini ga seberapa besar,
 					terlebih lagi di mata beberapa orang. Sepertinya sudah lebih dari
 					setengah tahun kita dekat lagi seperti ini (aku gabisa ngitung bulan)
@@ -31,10 +30,10 @@
 					kamu :( . Again, Happy Birthday Malva! I love you.
 				</p>
 			</header>
-			<div id="cards-wrapper" class="flex justify-center">
-				<div id="cards-container" class="flex gap-64">
+			<div id="cards-wrapper" class="flex justify-center mb-16 lg:mb-32">
+				<div id="cards-container" class="flex flex-wrap justify-center gap-16 lg:gap-56">
 					<div
-						class="relative w-[350px] h-[350px] overflow-hidden rounded-3xl bg-slate-400 transition-transform duration-500 ease-in-out shadow-xl hover:shadow-[#3f3f3f] hover:rotate-45 hover:scale-125 cursor-pointer"
+						class="relative w-full sm:w-[300px] lg:w-[350px] h-[250px] sm:h-[300px] lg:h-[350px] overflow-hidden rounded-3xl bg-slate-400 transition-transform duration-500 ease-in-out shadow-xl hover:shadow-[#3f3f3f] hover:rotate-45 hover:scale-125 cursor-pointer"
 						onclick="location.href='gallery1.html'">
 						<img
 							src="./style/assets/img/Foto Malva/Foto1malva.jpg"
@@ -42,7 +41,7 @@
 							class="w-full h-full object-cover" />
 					</div>
 					<div
-						class="relative w-[350px] h-[350px] overflow-hidden rounded-3xl bg-slate-400 transition-transform duration-500 ease-in-out shadow-xl hover:shadow-[#3f3f3f] hover:-rotate-45 hover:scale-125 cursor-pointer"
+						class="relative w-full sm:w-[300px] lg:w-[350px] h-[250px] sm:h-[300px] lg:h-[350px] overflow-hidden rounded-3xl bg-slate-400 transition-transform duration-500 ease-in-out shadow-xl hover:shadow-[#3f3f3f] hover:-rotate-45 hover:scale-125 cursor-pointer"
 						onclick="location.href='gallery2.html'">
 						<img
 							src="./style/assets/img/Foto Bareng/Foto14kita.jpg"
@@ -52,11 +51,11 @@
 				</div>
 			</div>
 		</main>
-		<div class="mx-96 my-64 p-20 rounded-[64px] bg-lime-700">
-			<h1 class="text-center text-7xl font-weight-extrabold text-white">
+		<div class="mx-4 sm:mx-8 lg:mx-96 my-16 sm:my-32 lg:my-64 p-8 sm:p-12 lg:p-20 rounded-[32px] sm:rounded-[48px] lg:rounded-[64px] bg-lime-700">
+			<h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white text-center">
 				Pesan dari Ami
 			</h1>
-			<p class="text-[1.5rem] text-justify my-32 text-emerald-200">
+			<p class="text-base sm:text-lg lg:text-[1.5rem] text-justify my-8 lg:my-32 text-emerald-200">
 				Ga nyangka udah naik umur aja, cepet banget ya? apalagi kalo diitung
 				kamu udah kelas 2 sekarang, bentar lagi kamu naik ke kelas 3. Semangat
 				ya sayang, enjoy kelas 2 mu selagi bisa karena kelas 2 adalah free se
@@ -70,6 +69,6 @@
 				satu dan lain hal okaay :] Try to be happy as much as possible!
 			</p>
 		</div>
-		<div class="mb-64"></div>
+		<div class="mb-32"></div>
 	</body>
 </html>
